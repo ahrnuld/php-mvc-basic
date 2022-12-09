@@ -1,7 +1,7 @@
-# Docker template for PHP projects
-This repository provides a starting template for PHP application development.
+# Basic PHP MVC demo
+This repository demonstrates how the MVC design pattern can be implemented using PHP.
 
-It contains:
+It contains a docker configuration with:
 * NGINX webserver
 * PHP FastCGI Process Manager with PDO MySQL support
 * MariaDB (GPL MySQL fork)
@@ -27,3 +27,5 @@ Or run:
 ```bash
 docker-compose down
 ```
+
+Then visit localhost in your browser
