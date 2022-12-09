@@ -27,5 +27,3 @@ Or run:
 ```bash
 docker-compose down
 ```
-
-Then visit localhost in your browser
