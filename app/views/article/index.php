@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../header.php';
+include __DIR__ . '/../nav.php';
 ?>
 
 <h1>Articles!</h1>

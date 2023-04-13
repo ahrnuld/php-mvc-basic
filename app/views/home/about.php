@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../header.php';
+include __DIR__ . '/../nav.php';
 
 echo "<h1>About page!</h1>";
 
