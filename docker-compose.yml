@@ -12,25 +12,30 @@ services:
         build:
             context: .
             dockerfile: PHP.Dockerfile
+        working_dir: /app    
         volumes:
             - ./app:/app
     mysql:
         image: mariadb:latest
         environment:
-            MYSQL_ROOT_PASSWORD: 'secret123'
-            MYSQL_USER: 'developer'
-            MYSQL_PASSWORD: 'secret123'
-            MYSQL_DATABASE: 'developmentdb'
+            MYSQL_ROOT_PASSWORD: secret123
+            MYSQL_USER: user
+            MYSQL_PASSWORD: password
+            MYSQL_DATABASE: mvcblog
         volumes:
             - mysqldata:/var/lib/mysql
             - ./sql:/docker-entrypoint-initdb.d
         ports:
             - 3306:3306
+
     phpmyadmin:
         image: phpmyadmin:latest
+        environment:
+            PMA_HOST: mysql
+            PMA_USER: root
+            PMA_PASSWORD: secret123
         ports:
             - 8080:80
-        environment:
-            - PMA_HOST=mysql
+
 volumes:
     mysqldata: {}

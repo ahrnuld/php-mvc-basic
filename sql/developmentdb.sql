@@ -27,22 +27,22 @@ SET time_zone = "+00:00";
 -- Table structure for table `article`
 --
 
-CREATE TABLE `article` (
+CREATE TABLE `articles` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `content` varchar(10000) NOT NULL,
   `author` varchar(255) NOT NULL,
-  `posted_at` datetime NOT NULL
+  `posted_at` datetime  DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `article`
 --
 
-INSERT INTO `article` (`id`, `title`, `content`, `author`, `posted_at`) VALUES
+INSERT INTO `articles` (`id`, `title`, `content`, `author`, `posted_at`) VALUES
 (1, 'Test title', 'test content', 'test author', '2022-11-30 13:09:55');
 
-INSERT INTO `article` (`id`, `title`, `content`, `author`, `posted_at`) VALUES
+INSERT INTO `articles` (`id`, `title`, `content`, `author`, `posted_at`) VALUES
 (2, 'Another test title', 'Some more test content', 'test author', '2022-11-29 13:09:55');
 
 --
@@ -52,7 +52,7 @@ INSERT INTO `article` (`id`, `title`, `content`, `author`, `posted_at`) VALUES
 --
 -- Indexes for table `article`
 --
-ALTER TABLE `article`
+ALTER TABLE `articles`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -62,7 +62,7 @@ ALTER TABLE `article`
 --
 -- AUTO_INCREMENT for table `article`
 --
-ALTER TABLE `article`
+ALTER TABLE `articles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 

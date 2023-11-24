@@ -1,9 +1,14 @@
 <?php
-require __DIR__ . '/../repositories/articlerepository.php';
+namespace App\Services;
 
 class ArticleService {
     public function getAll() {
-        $repository = new ArticleRepository();
+        $repository = new \App\Repositories\ArticleRepository();
         return $repository->getAll();
+    }
+
+    public function insert($article) {
+        $repository = new \App\Repositories\ArticleRepository();
+        return $repository->insert($article);
     }
 }

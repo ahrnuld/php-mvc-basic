@@ -1,0 +1,21 @@
+{
+    "name": "ahrnuld/php-mvc-basic",
+    "description": "Basic MVC blog example in PHP",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Mark de Haan (Ahrnuld)"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": ".",
+            "App\\Controllers\\": "./controllers",
+            "App\\Models\\": "./models",
+            "App\\Services\\": "./services",
+            "App\\Repositories\\": "./repositories",
+            "App\\Views\\": "./views"            
+        }
+    }
+}

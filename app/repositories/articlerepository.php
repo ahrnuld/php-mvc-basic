@@ -1,22 +1,28 @@
 <?php
-require __DIR__ . '/repository.php';
-require __DIR__ . '/../models/article.php';
+namespace App\Repositories;
+
+use PDO;
 
 class ArticleRepository extends Repository {
 
     function getAll() {
-        try {
-            $stmt = $this->connection->prepare("SELECT * FROM article");
-            $stmt->execute();
+        $stmt = $this->connection->prepare("SELECT * FROM articles");
+        $stmt->execute();
 
-            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Article');
-            $articles = $stmt->fetchAll();
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'App\\Models\\Article');
+        $articles = $stmt->fetchAll();
 
-            return $articles;
+        return $articles;
+    }
 
-        } catch (PDOException $e)
-        {
-            echo $e;
-        }
+
+    public function insert($article) {
+        $stmt = $this->connection->prepare("INSERT INTO articles (title, content, author) 
+        VALUES (:title, :content, :author)");
+        
+        $results = $stmt->execute([':title' => $article->title, 
+                                ':content' => $article->content, 
+                                ':author' => $article->author]);
+        return $results;
     }
 }
